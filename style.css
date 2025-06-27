@@ -1,0 +1,267 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- CSS Variables for a Vibrant Palette --- */
+:root {
+    --bg-color: #f0f2f5;
+    --container-bg: #ffffff;
+    --primary-color: #007bff;
+    --primary-gradient: linear-gradient(45deg, #007bff, #0056b3);
+    --secondary-gradient: linear-gradient(45deg, #6f42c1, #4d2d8a);
+    --success-color: #28a745;
+    --success-gradient: linear-gradient(45deg, #28a745, #1e7e34);
+    --error-color: #dc3545;
+    --text-primary: #333;
+    --text-secondary: #6c757d;
+    --border-color: #dee2e6;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Base & Body Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+/* --- Main Application Container --- */
+.app-container {
+    width: 100%;
+    max-width: 600px;
+    background: var(--container-bg);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* --- Header Styles --- */
+.app-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.app-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.app-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* --- Section Styles --- */
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.mood-options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.sub-mood-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* --- Button Styles --- */
+.mood-btn {
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mood-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.2);
+    border-color: var(--primary-color);
+}
+
+.mood-btn.active {
+    background: var(--primary-gradient);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+}
+
+.mood-btn.sub-mood.active {
+    background: var(--secondary-gradient);
+    box-shadow: 0 8px 15px rgba(111, 66, 193, 0.3);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--success-gradient);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+.submit-button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+}
+
+/* --- Form Elements --- */
+.note-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.note-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* --- Feedback Box --- */
+.feedback-box {
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ecef;
+    color: var(--text-secondary);
+}
+
+.feedback-box.suggestion {
+    background-color: #e0e7ff;
+    color: #4338ca;
+}
+
+.feedback-box.error {
+    background-color: #f8d7da;
+    color: var(--error-color);
+}
+
+/* --- History Section --- */
+.history-container {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.history-item {
+    background-color: #f8f9fa;
+    border-left: 5px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.history-item-content p:first-child {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.history-item-content .note {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.history-item-timestamp {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: right;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+
+.history-item-empty {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 2rem;
+}
+
+/* --- Utility & Animation Classes --- */
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 640px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+    
+    .app-container {
+        padding: 1.5rem;
+    }
+
+    .app-title {
+        font-size: 2rem;
+    }
+
+    .mood-options-grid {
+        grid-template-columns: 1fr;
+    }
+}
