@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker Pro</title>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app-container">
+
+        <!-- Header Section -->
+        <header class="app-header">
+            <h1 class="app-title">Mood Tracker Pro</h1>
+            <p class="app-subtitle">How are you feeling today?</p>
+        </header>
+
+        <!-- Step 1: Main Mood Selection -->
+        <section class="mood-section">
+            <h2 class="section-title">1. Select Your Main Mood</h2>
+            <div id="main-mood-options" class="mood-options-grid">
+                <button class="mood-btn" data-mood="Happy">😊 Happy</button>
+                <button class="mood-btn" data-mood="Sad">😢 Sad</button>
+                <button class="mood-btn" data-mood="Stressed">😫 Stressed</button>
+            </div>
+        </section>
+
+        <!-- Step 2: Sub-Mood Selection (Initially hidden) -->
+        <section id="sub-mood-section" class="mood-section hidden">
+            <h2 class="section-title">2. What's The Detail?</h2>
+            <div id="sub-mood-options" class="mood-options-grid sub-mood-grid">
+                <!-- Sub-mood buttons will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Step 3: Note Input (Initially hidden) -->
+        <section id="note-section" class="mood-section hidden">
+            <h2 class="section-title">3. Add a Note (Optional)</h2>
+            <textarea id="note-input" class="note-textarea" placeholder="What's on your mind?"></textarea>
+        </section>
+
+        <!-- Feedback Display Area for Suggestions and Errors -->
+        <div id="feedback-container" class="feedback-box">
+            <p id="feedback-text">Select a mood to get started.</p>
+        </div>
+
+        <!-- Submit Button -->
+        <button id="submit-btn" class="submit-button">Save Mood Entry</button>
+
+        <!-- History Section -->
+        <section id="history-section" class="history-container">
+            <h2 class="section-title">Mood History</h2>
+            <ul id="history-list">
+                <!-- History items will be dynamically inserted here -->
+                <li id="no-history-msg" class="history-item-empty">Your mood entries will appear here.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
